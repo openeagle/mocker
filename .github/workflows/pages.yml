@@ -1,0 +1,26 @@
+name: pages
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    name: deploy pages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+      - run: |
+          yarn
+          yarn run doc:build
+      - name: deploy
+        uses: JamesIves/github-pages-deploy-action@v4.3.0
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          branch: gh-pages
+          folder: 'packages/doc/.vuepress/dist'

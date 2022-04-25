@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>安装 | HTTP Mocker</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="HTTP 接口模拟器。">
+    
+    <link rel="preload" href="/mocker/assets/css/0.styles.b48283d0.css" as="style"><link rel="preload" href="/mocker/assets/js/app.686b151c.js" as="script"><link rel="preload" href="/mocker/assets/js/2.0b244c79.js" as="script"><link rel="preload" href="/mocker/assets/js/20.280fc339.js" as="script"><link rel="prefetch" href="/mocker/assets/js/10.89d1a062.js"><link rel="prefetch" href="/mocker/assets/js/11.379484c0.js"><link rel="prefetch" href="/mocker/assets/js/12.5da36f33.js"><link rel="prefetch" href="/mocker/assets/js/13.50335841.js"><link rel="prefetch" href="/mocker/assets/js/14.0d3ef3df.js"><link rel="prefetch" href="/mocker/assets/js/15.ea25d16d.js"><link rel="prefetch" href="/mocker/assets/js/16.b0cc5f09.js"><link rel="prefetch" href="/mocker/assets/js/17.375d6f33.js"><link rel="prefetch" href="/mocker/assets/js/18.a6142cee.js"><link rel="prefetch" href="/mocker/assets/js/19.7f9a90a2.js"><link rel="prefetch" href="/mocker/assets/js/21.6caf55e6.js"><link rel="prefetch" href="/mocker/assets/js/3.e5ec8172.js"><link rel="prefetch" href="/mocker/assets/js/4.f53b967e.js"><link rel="prefetch" href="/mocker/assets/js/5.261f74bc.js"><link rel="prefetch" href="/mocker/assets/js/6.4aabc7b3.js"><link rel="prefetch" href="/mocker/assets/js/7.80afc31f.js"><link rel="prefetch" href="/mocker/assets/js/8.94be3453.js"><link rel="prefetch" href="/mocker/assets/js/9.1cf7c0cc.js">
+    <link rel="stylesheet" href="/mocker/assets/css/0.styles.b48283d0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/mocker/" class="home-link router-link-active"><!----> <span class="site-name">HTTP Mocker</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/mocker/guide/installation.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  教程
+</a></div><div class="nav-item"><a href="/mocker/api/config.html" class="nav-link">
+  API
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/mocker/guide/installation.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  教程
+</a></div><div class="nav-item"><a href="/mocker/api/config.html" class="nav-link">
+  API
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/mocker/guide/introduction.html" class="sidebar-link">介绍</a></li><li><a href="/mocker/guide/principle.html" class="sidebar-link">原理</a></li><li><a href="/mocker/guide/installation.html" aria-current="page" class="active sidebar-link">安装</a></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>配置</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/mocker/guide/configuration/local.html" class="sidebar-link">本地自定义模拟数据</a></li><li><a href="/mocker/guide/configuration/yapi.html" class="sidebar-link">YAPI 接口模拟数据</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="安装"><a href="#安装" class="header-anchor">#</a> 安装</h1> <p>本文会帮助你从头搭建一个简单的 HTTP Mocker</p> <h2 id="安装依赖"><a href="#安装依赖" class="header-anchor">#</a> 安装依赖</h2> <div class="language- extra-class"><pre class="language-text"><code>npm install @openeagle/http-mock-middleware --save-dev
+</code></pre></div><p>或者</p> <div class="language- extra-class"><pre class="language-text"><code>yarn add @openeagle/http-mock-middleware --dev
+</code></pre></div><h2 id="框架集成"><a href="#框架集成" class="header-anchor">#</a> 框架集成</h2> <h3 id="vue-cli"><a href="#vue-cli" class="header-anchor">#</a> Vue CLI</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// vue.config.js</span>
+
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  devServer<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token operator">...</span>
+    <span class="token function">before</span><span class="token punctuation">(</span><span class="token parameter">app</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">const</span> createHTTPMockMiddleware <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'@openeagle/http-mock-middleware'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token function">createHTTPMockMiddleware</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        delay<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span> <span class="token comment">// 模拟接口统一设置 200ms 的延迟</span>
+        local<span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'mock'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">// 设置本地 mock 文件目录</span>
+        yapi<span class="token operator">:</span> <span class="token punctuation">{</span>
+          origin<span class="token operator">:</span> <span class="token string">'http://yapi.openeagle.cn/'</span><span class="token punctuation">,</span>
+          projects<span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+              id<span class="token operator">:</span> <span class="token string">'633'</span><span class="token punctuation">,</span> <span class="token comment">// YAPI 项目id</span>
+              token<span class="token operator">:</span> <span class="token string">'xxxToken'</span><span class="token punctuation">,</span> <span class="token comment">// YAPI 项目token</span>
+              prefix<span class="token operator">:</span> <span class="token string">'/api/xxx'</span><span class="token punctuation">,</span> <span class="token comment">// 请求前缀</span>
+              proxy<span class="token operator">:</span> <span class="token string">'http://xxx-api.openeagle.cn'</span><span class="token punctuation">,</span> <span class="token comment">// 反向代理</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="vite"><a href="#vite" class="header-anchor">#</a> Vite</h3> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// vite.config.ts</span>
+
+<span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> path <span class="token keyword">from</span> <span class="token string">'path'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Plugin<span class="token punctuation">,</span> defineConfig <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vite'</span>
+<span class="token keyword">import</span> createHTTPMockMiddleware <span class="token keyword">from</span> <span class="token string">'@openeagle/http-mock-middleware'</span>
+
+<span class="token keyword">const</span> HTTPMockPlugin <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Plugin <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> config<span class="token operator">:</span> <span class="token builtin">any</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token string">'http-mock'</span><span class="token punctuation">,</span>
+    <span class="token function">configResolved</span><span class="token punctuation">(</span>resolvedConfig<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      config <span class="token operator">=</span> resolvedConfig
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">configureServer</span><span class="token punctuation">(</span>server<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>config <span class="token operator">&amp;&amp;</span> config<span class="token punctuation">.</span>command <span class="token operator">===</span> <span class="token string">'serve'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        server<span class="token punctuation">.</span>middlewares<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>
+          <span class="token function">createHTTPMockMiddleware</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            delay<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span> <span class="token comment">// 模拟接口统一设置 200ms 的延迟</span>
+            local<span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'mock'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">// 设置本地 mock 文件目录</span>
+            yapi<span class="token operator">:</span> <span class="token punctuation">{</span>
+              origin<span class="token operator">:</span> <span class="token string">'http://yapi.openeagle.cn/'</span><span class="token punctuation">,</span>
+              projects<span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token punctuation">{</span>
+                  id<span class="token operator">:</span> <span class="token string">'633'</span><span class="token punctuation">,</span> <span class="token comment">// YAPI 项目id</span>
+                  token<span class="token operator">:</span> <span class="token string">'xxxToken'</span><span class="token punctuation">,</span> <span class="token comment">// YAPI 项目token</span>
+                  prefix<span class="token operator">:</span> <span class="token string">'/api/xxx'</span><span class="token punctuation">,</span> <span class="token comment">// 请求前缀</span>
+                  proxy<span class="token operator">:</span> <span class="token string">'http://xxx-api.openeagle.cn'</span><span class="token punctuation">,</span> <span class="token comment">// 反向代理</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+              <span class="token punctuation">]</span><span class="token punctuation">,</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineConfig</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">{</span> command <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    <span class="token comment">// ...</span>
+    plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token function">HTTPMockPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="webpack"><a href="#webpack" class="header-anchor">#</a> Webpack</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// webpack.config.js</span>
+
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  devServer<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// ...</span>
+    <span class="token function">before</span><span class="token punctuation">(</span><span class="token parameter">app</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">const</span> createHTTPMockMiddleware <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'@openeagle/http-mock-middleware'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token function">createHTTPMockMiddleware</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        delay<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span> <span class="token comment">// 模拟接口统一设置 200ms 的延迟</span>
+        local<span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'mock'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">// 设置本地 mock 文件目录</span>
+        yapi<span class="token operator">:</span> <span class="token punctuation">{</span>
+          origin<span class="token operator">:</span> <span class="token string">'http://yapi.openeagle.cn/'</span><span class="token punctuation">,</span>
+          projects<span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+              id<span class="token operator">:</span> <span class="token string">'633'</span><span class="token punctuation">,</span> <span class="token comment">// YAPI 项目id</span>
+              token<span class="token operator">:</span> <span class="token string">'xxxToken'</span><span class="token punctuation">,</span> <span class="token comment">// YAPI 项目token</span>
+              prefix<span class="token operator">:</span> <span class="token string">'/api/xxx'</span><span class="token punctuation">,</span> <span class="token comment">// 请求前缀</span>
+              proxy<span class="token operator">:</span> <span class="token string">'http://xxx-api.openeagle.cn'</span><span class="token punctuation">,</span> <span class="token comment">// 反向代理</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="create-react-app"><a href="#create-react-app" class="header-anchor">#</a> Create React App</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// src/setupProxy.js</span>
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">app</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">const</span> createHTTPMockMiddleware <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'@openeagle/http-mock-middleware'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token function">createHTTPMockMiddleware</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      delay<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span> <span class="token comment">// 模拟接口统一设置 200ms 的延迟</span>
+      local<span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'mock'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">// 设置本地 mock 文件目录</span>
+      yapi<span class="token operator">:</span> <span class="token punctuation">{</span>
+        origin<span class="token operator">:</span> <span class="token string">'http://yapi.openeagle.cn/'</span><span class="token punctuation">,</span>
+        projects<span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token string">'633'</span><span class="token punctuation">,</span> <span class="token comment">// YAPI 项目id</span>
+            token<span class="token operator">:</span> <span class="token string">'xxxToken'</span><span class="token punctuation">,</span> <span class="token comment">// YAPI 项目token</span>
+            prefix<span class="token operator">:</span> <span class="token string">'/api/xxx'</span><span class="token punctuation">,</span> <span class="token comment">// 请求前缀</span>
+            proxy<span class="token operator">:</span> <span class="token string">'http://xxx-api.openeagle.cn'</span><span class="token punctuation">,</span> <span class="token comment">// 反向代理</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="express"><a href="#express" class="header-anchor">#</a> Express</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'express'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> createHTTPMockMiddleware <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'@openeagle/http-mock-middleware'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token function">createHTTPMockMiddleware</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  delay<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span> <span class="token comment">// 模拟接口统一设置 200ms 的延迟</span>
+  local<span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'mock'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">// 设置本地 mock 文件目录</span>
+  yapi<span class="token operator">:</span> <span class="token punctuation">{</span>
+    origin<span class="token operator">:</span> <span class="token string">'http://yapi.openeagle.cn/'</span><span class="token punctuation">,</span>
+    projects<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        id<span class="token operator">:</span> <span class="token string">'633'</span><span class="token punctuation">,</span> <span class="token comment">// YAPI 项目id</span>
+        token<span class="token operator">:</span> <span class="token string">'xxxToken'</span><span class="token punctuation">,</span> <span class="token comment">// YAPI 项目token</span>
+        prefix<span class="token operator">:</span> <span class="token string">'/api/xxx'</span><span class="token punctuation">,</span> <span class="token comment">// 请求前缀</span>
+        proxy<span class="token operator">:</span> <span class="token string">'http://xxx-api.openeagle.cn'</span><span class="token punctuation">,</span> <span class="token comment">// 反向代理</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8080</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/mocker/guide/principle.html" class="prev">
+        原理
+      </a></span> <span class="next"><a href="/mocker/guide/configuration/local.html">
+        本地自定义模拟数据
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/mocker/assets/js/app.686b151c.js" defer></script><script src="/mocker/assets/js/2.0b244c79.js" defer></script><script src="/mocker/assets/js/20.280fc339.js" defer></script>
+  </body>
+</html>

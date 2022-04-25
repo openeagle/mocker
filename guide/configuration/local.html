@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>本地自定义模拟数据 | HTTP Mocker</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="HTTP 接口模拟器。">
+    
+    <link rel="preload" href="/mocker/assets/css/0.styles.b48283d0.css" as="style"><link rel="preload" href="/mocker/assets/js/app.686b151c.js" as="script"><link rel="preload" href="/mocker/assets/js/2.0b244c79.js" as="script"><link rel="preload" href="/mocker/assets/js/18.a6142cee.js" as="script"><link rel="prefetch" href="/mocker/assets/js/10.89d1a062.js"><link rel="prefetch" href="/mocker/assets/js/11.379484c0.js"><link rel="prefetch" href="/mocker/assets/js/12.5da36f33.js"><link rel="prefetch" href="/mocker/assets/js/13.50335841.js"><link rel="prefetch" href="/mocker/assets/js/14.0d3ef3df.js"><link rel="prefetch" href="/mocker/assets/js/15.ea25d16d.js"><link rel="prefetch" href="/mocker/assets/js/16.b0cc5f09.js"><link rel="prefetch" href="/mocker/assets/js/17.375d6f33.js"><link rel="prefetch" href="/mocker/assets/js/19.7f9a90a2.js"><link rel="prefetch" href="/mocker/assets/js/20.280fc339.js"><link rel="prefetch" href="/mocker/assets/js/21.6caf55e6.js"><link rel="prefetch" href="/mocker/assets/js/3.e5ec8172.js"><link rel="prefetch" href="/mocker/assets/js/4.f53b967e.js"><link rel="prefetch" href="/mocker/assets/js/5.261f74bc.js"><link rel="prefetch" href="/mocker/assets/js/6.4aabc7b3.js"><link rel="prefetch" href="/mocker/assets/js/7.80afc31f.js"><link rel="prefetch" href="/mocker/assets/js/8.94be3453.js"><link rel="prefetch" href="/mocker/assets/js/9.1cf7c0cc.js">
+    <link rel="stylesheet" href="/mocker/assets/css/0.styles.b48283d0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/mocker/" class="home-link router-link-active"><!----> <span class="site-name">HTTP Mocker</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/mocker/guide/installation.html" class="nav-link">
+  教程
+</a></div><div class="nav-item"><a href="/mocker/api/config.html" class="nav-link">
+  API
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/mocker/guide/installation.html" class="nav-link">
+  教程
+</a></div><div class="nav-item"><a href="/mocker/api/config.html" class="nav-link">
+  API
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/mocker/guide/introduction.html" class="sidebar-link">介绍</a></li><li><a href="/mocker/guide/principle.html" class="sidebar-link">原理</a></li><li><a href="/mocker/guide/installation.html" class="sidebar-link">安装</a></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>配置</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/mocker/guide/configuration/local.html" aria-current="page" class="active sidebar-link">本地自定义模拟数据</a></li><li><a href="/mocker/guide/configuration/yapi.html" class="sidebar-link">YAPI 接口模拟数据</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="本地自定义模拟数据"><a href="#本地自定义模拟数据" class="header-anchor">#</a> 本地自定义模拟数据</h1> <h2 id="配置本地目录"><a href="#配置本地目录" class="header-anchor">#</a> 配置本地目录</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> createHTTPMockMiddleware <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'@openeagle/http-mock-middleware'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">createHTTPMockMiddleware</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  local<span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'mock'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">// 设置本地 mock 文件目录</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="配置模拟数据"><a href="#配置模拟数据" class="header-anchor">#</a> 配置模拟数据</h2> <p>按服务端的接口路径结构在本地 mock 目录里配置对应接口模拟数据。</p> <div class="language- extra-class"><pre class="language-text"><code>.
+├── ...
+├── mock ####################################### 接口模拟配置
+│   ├── xxx #################################### https://xxx-api.openeagle.cn
+│   │   ├── member ############################# 会员业务
+│   │   │   ├── config ######################### 配置模块
+│   │   │   │   ├── list ####################### 配置列表
+│   │   │   │   └── query ###################### 配置查询
+│   │   │   ├── order ########################## 会员订单
+│   │   │   └── ... ############################ 其他模块
+│   │   └── user ############################### 用户服务
+│   ├── yyy #################################### https://yyy-api.openeagle.cn
+│   └── zzz #################################### https://zzz-api.openeagle.cn
+├── src
+└── ...
+</code></pre></div><p>每个模块的导出如下所示:</p> <div class="language-js extra-class"><pre class="language-js"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token string">'POST /api/xxx/member/order/list'</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    response<span class="token operator">:</span> <span class="token punctuation">{</span>
+      code<span class="token operator">:</span> <span class="token string">'10000'</span><span class="token punctuation">,</span>
+      message<span class="token operator">:</span> <span class="token string">'success'</span><span class="token punctuation">,</span>
+      body<span class="token operator">:</span> <span class="token punctuation">{</span>
+        hasMore<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token string">'data|10'</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+          <span class="token string">'id|+1'</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/mocker/guide/installation.html" class="prev">
+        安装
+      </a></span> <span class="next"><a href="/mocker/guide/configuration/yapi.html">
+        YAPI 接口模拟数据
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/mocker/assets/js/app.686b151c.js" defer></script><script src="/mocker/assets/js/2.0b244c79.js" defer></script><script src="/mocker/assets/js/18.a6142cee.js" defer></script>
+  </body>
+</html>

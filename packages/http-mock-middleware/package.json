@@ -1,0 +1,23 @@
+{
+  "name": "@openeagle/http-mock-middleware",
+  "version": "2.0.0",
+  "description": "http api mock middleware",
+  "keywords": [
+    "http",
+    "api",
+    "mock",
+    "yapi"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "chokidar": "^3.5.2",
+    "clear-module": "^4.1.1",
+    "colors-cli": "^1.0.27",
+    "express": "^4.17.1",
+    "http-proxy-middleware": "^2.0.6",
+    "mockjs": "^1.1.0",
+    "progress": "^2.0.0"
+  }
+}

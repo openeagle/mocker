@@ -1,0 +1,55 @@
+{
+  "private": true,
+  "name": "@openeagle/mocker-example",
+  "version": "1.0.0",
+  "description": "HTTP 接口模拟器测试示例.",
+  "keywords": [
+    "http",
+    "mock",
+    "example"
+  ],
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint:css": "stylelint \"./src/**/*.{css,less}\"",
+    "lint:js": "eslint --ext .js,.ts,.tsx ./src",
+    "format:css": "stylelint --fix \"./src/**/*.{css,less}\"",
+    "format:js": "eslint --fix --ext .js,.ts,.tsx ./src",
+    "prerelease": "npm run build && npm run bundle",
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js}": "eslint --fix",
+    "*.{css,less}": "stylelint --fix"
+  },
+  "dependencies": {
+    "@openeagle/antd-vue": "^1.0.0",
+    "antd": "^4.16.0-alpha.2",
+    "clipboard": "^2.0.8",
+    "vant": "^3.2.0",
+    "vue": "^3.0.0",
+    "vue-router": "^4.0.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.5.0",
+    "@vue/cli-plugin-typescript": "^4.5.0",
+    "@vue/cli-service": "^4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "@openeagle/eslint-config-vue": "^1.0.0",
+    "@openeagle/prettier-config": "^1.0.0",
+    "@openeagle/stylelint-config": "^1.0.0",
+    "babel-plugin-import": "^1.13.3",
+    "eslint": "^8.0.0",
+    "less": "^4.1.1",
+    "less-loader": "^7.3.0",
+    "lint-staged": "^11.0.0",
+    "postcss": "^8.2.6",
+    "prettier": "^2.0.0",
+    "regenerator-runtime": "^0.9.0",
+    "rimraf": "^3.0.2",
+    "stylelint": "^14.0.0",
+    "typescript": "^4.0.0",
+    "vue-loader": "^16.1.2",
+    "vue-template-compiler": "^2.6.12"
+  }
+}

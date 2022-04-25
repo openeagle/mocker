@@ -1,0 +1,52 @@
+{
+  "private": true,
+  "name": "@openeagle/mocker",
+  "workspaces": [
+    "packages/**",
+    "!packages/doc",
+    "!packages/example"
+  ],
+  "scripts": {
+    "prepare": "husky install",
+    "dev": "npm-run-all --parallel example:serve",
+    "doc:dev": "yarn workspace @openeagle/mocker-doc dev",
+    "doc:build": "yarn workspace @openeagle/mocker-doc build",
+    "example:serve": "yarn workspace @openeagle/mocker-example serve",
+    "example:build": "yarn workspace @openeagle/mocker-example build",
+    "release": "dotenv -- multi-semantic-release --deps.bump=satisfy --deps.release=patch"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "dotenv-cli": "^4.0.0",
+    "husky": "^7.0.0",
+    "multi-semantic-release": "^2.11.3",
+    "npm-run-all": "^4.1.5",
+    "semantic-release": "^17.0.0"
+  },
+  "release": {
+    "dryRun": false,
+    "ci": false,
+    "noCi": true,
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogFile": "CHANGELOG.md"
+        }
+      ],
+      "@semantic-release/npm",
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "CHANGELOG.md",
+            "package.json"
+          ]
+        }
+      ]
+    ]
+  }
+}

@@ -1,6 +1,6 @@
 {
   "name": "@openeagle/http-mock-middleware",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "description": "http api mock middleware",
   "keywords": [
     "http",

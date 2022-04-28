@@ -11,7 +11,7 @@ function createHTTPMockMiddleware(opts) {
     mergeable: true, // 是否合并yapi生成的mock数据
     yapi: {
       // params: {
-      //   // pageNumber: "page_no|pageNum|page_num|pageNo",
+      //   pageNumber: "page_no|pageNum|page_num|pageNo",
       //   pageSize: "page_size|pageSize",
       //   code: "code|returncode",
       //   message: "message"
